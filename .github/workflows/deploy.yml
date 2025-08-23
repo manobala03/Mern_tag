@@ -1,0 +1,27 @@
+name: Deploy Multiple Branches to Pages
+
+on:
+  push:
+    branches:
+      - a-3
+      - a-4
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # If you need a build step (React/Vite/etc.), add it here.
+      # For pure HTML/CSS/JS, skip this.
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./
+          destination_dir: ${{ github.ref_name }}
