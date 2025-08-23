@@ -3,86 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todolist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background: url("https://ik.imagekit.io/4z8covdo9/Full%20stack/todolistbg.png?updatedAt=1700761069523") no-repeat center center;
-      color: white;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container {
-      
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 350px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 1.5;
-      margin: 10px 0;
-    }
-
-    h3 {
-      margin-top: 15px;
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 15px 0;
-      padding: 10px 20px;
-      background-color: orange;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      opacity: 0.9;
-    }
-
-    .link {
-      font-size: 12px;
-      color: white;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-  </style>
+  <title>Chat UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div class="container">
-    <h1>Todolist</h1>
-    <p>Each day I will accomplish one thing on my todo list.</p>
+<body class="font-[Roboto]">
+  <div class="h-screen w-full bg-[url('https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/chatbg.png')] bg-cover bg-center flex justify-center items-center">
+    
+    <!-- Chat Container -->
+    <div class="bg-[url('https://ik.imagekit.io/lh5jnqzk9/mano__fJLiUkhZ?updatedAt=1755874100410')] bg-cover bg-center  w-110 h-[580px] bg-black/70 rounded-lg flex flex-col">
+      
+      <!-- Header -->
+      <div class="bg-[#323f4b] text-[#ffffff] text-lg font-semibold p-4 text-center">
+        Rahul
+      </div>
 
-    <h3>Read a Book</h3>
-    <p>
-      I don't think that the human race will survive the next thousand years, unless we spread into space. 
-      There are too many accidents that can befall life on a single planet. But I'm an optimist...
-    </p>
-
-    <button class="btn">Start</button>
-    <div class="link">Don't skip introduction</div>
+      <!-- Chat Messages -->
+      <div class="flex-1 p-4 space-y-5 overflow-y-auto">
+        <div class="bg-[#47a3f3] text-[#ffffff] p-3 rounded-lg text-right">Hello Rahul, how are you?</div>
+        <div class="bg-[#52606d] text-[#ffffff] p-3 rounded-lg ">Hi Varakumar, I am good. How about you?</div>
+        <div class="bg-[#47a3f3] text-[#ffffff] p-3 rounded-lg text-right">I'm fine. I published my website recently</div>
+        <div class="bg-[#52606d] text-[#ffffff] p-3 rounded-lg ">Oh great Varakumar! Can you send me the URL?</div>
+        <div class="bg-[#47a3f3] text-[#ffffff] p-3 rounded-lg text-right">https://varakumar.ccbp.tech</div>
+        <div class="bg-[#52606d] text-[#ffffff] p-3 rounded-lg ">Awesome Varakumar, where did you learn?</div>
+        <div class="bg-[#47a3f3] text-[#ffffff] p-3 rounded-lg  text-right">NxtWave CCBP 4.0 Program</div>
+      </div>
+      
+    </div>
   </div>
 </body>
 </html>
