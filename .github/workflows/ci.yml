@@ -1,0 +1,29 @@
+name: Deploy Multiple Branches
+
+on:
+  push:
+    branches:
+      - main
+      - a-3
+      - a-4
+      - a-5
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0   # ✅ get full history & files
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: .                 # ✅ must contain index.html
+          keep_files: true               # ✅ keeps old deployments
+          destination_dir: ${{ github.ref_name }}   # ✅ puts each branch in its own folder
